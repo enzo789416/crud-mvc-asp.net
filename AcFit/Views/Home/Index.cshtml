@@ -1,9 +1,20 @@
-﻿@{
+﻿@*@model AcFit.Models.Usuario*@
+@model AcFit.Models.ViewModel.PlanClientViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
+    @*<h1>@Model.Nome</h1>*@@*model unica*@
+    <h1>@ViewData["nomeUser"]</h1>
+    <h1>@ViewBag.nomeUser</h1>
+    <h1>@Model.Usuario.Nome</h1>@*view model*@
+    <ul>
+        @foreach (var item in Model.Planos)
+        {
+            <li>@item.Nome</li>
+        }
+    </ul>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
